@@ -38,6 +38,7 @@ void left();
 void right();
 void forward();
 void back();
+void Stop();
 void left_speed(unsigned char Speed);
 void right_speed(unsigned char Speed);
 void init_Board();

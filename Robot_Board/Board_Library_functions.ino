@@ -44,28 +44,36 @@ void init_Board()
 void left()
 {
   digitalWrite(Left_Motor_Bit_1 ,HIGH);
-  digitalWrite(Left_Motor_Bit_2 ,HIGH);
-  digitalWrite(Right_Motor_Bit_1,HIGH);
+  digitalWrite(Left_Motor_Bit_2 , LOW);
+  digitalWrite(Right_Motor_Bit_1, LOW);
   digitalWrite(Right_Motor_Bit_2,HIGH);
 }
 //-------------------------------------
 void right()
 {
-  digitalWrite(Left_Motor_Bit_1 ,HIGH);
+  digitalWrite(Left_Motor_Bit_1 , LOW);
   digitalWrite(Left_Motor_Bit_2 ,HIGH);
   digitalWrite(Right_Motor_Bit_1,HIGH);
-  digitalWrite(Right_Motor_Bit_2,HIGH);
+  digitalWrite(Right_Motor_Bit_2, LOW);
 }
 //-------------------------------------
 void forward()
 {
   digitalWrite(Left_Motor_Bit_1 ,HIGH);
-  digitalWrite(Left_Motor_Bit_2 ,HIGH);
+  digitalWrite(Left_Motor_Bit_2 , LOW);
   digitalWrite(Right_Motor_Bit_1,HIGH);
-  digitalWrite(Right_Motor_Bit_2,HIGH);
+  digitalWrite(Right_Motor_Bit_2, LOW);
 }
 //-------------------------------------
 void back()
+{
+  digitalWrite(Left_Motor_Bit_1 , LOW);
+  digitalWrite(Left_Motor_Bit_2 ,HIGH);
+  digitalWrite(Right_Motor_Bit_1, LOW);
+  digitalWrite(Right_Motor_Bit_2,HIGH);
+}
+//-------------------------------------
+void Stop()
 {
   digitalWrite(Left_Motor_Bit_1 ,HIGH);
   digitalWrite(Left_Motor_Bit_2 ,HIGH);
@@ -82,7 +90,6 @@ void right_speed(unsigned char Speed)
 {
   analogWrite(Right_Motor_Speed,Speed);
 }
-
 
 //all LED control Stuff-----------------------------------------------------------------------------
 void LED_M(char color)
